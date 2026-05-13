@@ -3,48 +3,177 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jai Ganesh - Home</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Jai Ganesh Enterprises - Katraj</title>
+    <style>
+        /* 3D & Theme Settings */
+        :root {
+            --navy: #002366;
+            --white: #ffffff;
+            --gold: #d4af37;
+            --shadow: 10px 10px 20px #bebebe, -10px -10px 20px #ffffff;
+            --heavy-3d: 0 20px 50px rgba(0,35,102,0.3);
+        }
+
+        html { scroll-behavior: smooth; } /* Smooth Scrolling */
+
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background-color: #f0f2f5;
+            color: var(--navy);
+            overflow-x: hidden;
+        }
+
+        /* Navigation - Simple Top Bar */
+        header {
+            background: var(--navy);
+            color: white;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        header h1 { margin: 0; font-size: 22px; letter-spacing: 2px; }
+
+        nav { margin-top: 10px; }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 13px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        /* Section Styling */
+        section {
+            padding: 80px 20px;
+            max-width: 1000px;
+            margin: auto;
+            min-height: 50vh;
+        }
+
+        /* 3D Box Effect */
+        .card-3d {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 30px;
+            box-shadow: var(--shadow);
+            transition: all 0.5s ease;
+            transform: perspective(1000px) rotateX(5deg); /* Default 3D tilt */
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .card-3d:hover {
+            transform: perspective(1000px) rotateX(0deg) translateY(-15px);
+            box-shadow: var(--heavy-3d);
+        }
+
+        .hero-box {
+            background: var(--navy);
+            color: white;
+            border-radius: 30px;
+            padding: 60px 20px;
+            box-shadow: var(--heavy-3d);
+            transform: perspective(1000px) rotateY(-5deg);
+        }
+
+        h2 { font-size: 2.5em; color: var(--navy); margin-bottom: 20px; }
+        .hero-box h2 { color: var(--white); }
+
+        .btn {
+            background: var(--gold);
+            color: var(--navy);
+            padding: 15px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            margin-top: 20px;
+            box-shadow: 0 10px 20px rgba(212, 175, 55, 0.4);
+            transition: 0.3s;
+        }
+
+        .btn:hover { transform: scale(1.1); box-shadow: 0 15px 30px rgba(212, 175, 55, 0.6); }
+
+        footer {
+            background: var(--navy);
+            color: white;
+            text-align: center;
+            padding: 50px 20px;
+            margin-top: 50px;
+        }
+
+        .logo-img { width: 100px; border-radius: 50%; background: white; padding: 5px; margin-bottom: 10px; }
+        
+        /* Mobile Responsive */
+        @media (max-width: 600px) {
+            h2 { font-size: 1.8em; }
+            .card-3d { padding: 20px; }
+            nav a { font-size: 10px; margin: 0 5px; }
+        }
+    </style>
 </head>
 <body>
+
     <header>
-        <img src="image.png" alt="Logo" class="logo-img">
+        <img src="image.png" alt="Logo" class="logo-img"><br>
         <h1>JAI GANESH ENTERPRISES</h1>
         <nav>
-            <a href="index.html">Home</a> 
-            <a href="about.html">About Us</a> 
-            <a href="market.html">Global Market</a> 
-            <a href="legal.html">Legal & Corporate</a> 
-            <a href="earn.html">Earn Dollars</a> 
-            <a href="platform.html">Our Platform</a> 
-            <a href="growth.html">Growth Strategy</a> 
-            <a href="trust.html">Trust & Security</a> 
-            <a href="legacy.html">Legacy</a> 
-            <a href="contact.html">Contact Us</a>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#market">Market</a>
+            <a href="#legal">Legal</a>
+            <a href="#contact">Contact</a>
         </nav>
     </header>
 
-    <div class="container">
-        <section class="hero">
+    <section id="home">
+        <div class="card-3d hero-box">
             <h2>EARN DOLLARS WITH TRUST</h2>
-            <p style="font-size: 1.2em;">You are at the right place for global financial growth.</p>
-            <a href="contact.html" class="btn">Get Started Now</a>
-        </section>
+            <p>You are at the right place for global financial growth. Join the elite market today.</p>
+            <a href="#contact" class="btn">START NOW</a>
+        </div>
+    </section>
 
+    <section id="about">
         <div class="card-3d">
-            <h3>Building Growth Since 1875</h3>
-            <p>Jai Ganesh is a Trusted Business Platform dedicated to providing a Legal & Corporate framework for global market participants. Our 150-year history ensures transparency and security.</p>
+            <h2>Our 150-Year Legacy</h2>
+            <p>Building Growth Since 1875. Jai Ganesh is a Trusted Business Platform providing a Legal & Corporate framework for global participants.</p>
         </div>
-        
-        <div class="card-3d" style="background: #002366; color: white;">
-            <h3>Our Office Location</h3>
-            <p>Katraj, Pune, Maharashtra - Visit us for a professional consultation.</p>
+    </section>
+
+    <section id="market">
+        <div class="card-3d" style="background: #f9f9f9;">
+            <h2>Global Market</h2>
+            <p>International opportunities at your fingertips. We connect you to a market that has been thriving for over a century with absolute transparency.</p>
         </div>
-    </div>
+    </section>
+
+    <section id="legal">
+        <div class="card-3d">
+            <h2>Legal & Corporate</h2>
+            <p>Your security is our priority. Our platform is fully compliant with legal standards, ensuring a safe environment for your financial journey.</p>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="card-3d" style="border: 2px solid var(--navy);">
+            <h2>Contact Us</h2>
+            <p><b>Location:</b> Katraj, Pune, Maharashtra</p>
+            <p>Professional Support is available 24/7 for our corporate partners.</p>
+            <a href="mailto:contact@jaiganesh.com" class="btn">Send Email</a>
+        </div>
+    </section>
 
     <footer>
         <p>&copy; 2026 Jai Ganesh Enterprises | Professional & Legal Platform</p>
-        <p>Location: Katraj, Pune, Maharashtra</p>
+        <p><b>Katraj, Pune</b></p>
     </footer>
+
 </body>
 </html>
