@@ -1,0 +1,105 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #ffffff;
+    color: #002366; /* Navy Blue */
+    line-height: 1.6;
+}
+
+header {
+    background: #002366;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+nav {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: white;
+    margin: 5px 15px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #d4af37;
+    transform: scale(1.1);
+}
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 40px 20px;
+}
+
+.hero {
+    text-align: center;
+    padding: 60px 20px;
+    background: linear-gradient(145deg, #ffffff, #e6e6e6);
+    border-radius: 20px;
+    margin-bottom: 40px;
+    box-shadow: 20px 20px 60px #d9d9d9, -20px -20px 60px #ffffff; /* 3D Neumorphism */
+}
+
+.card-3d {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 10px 10px 20px #bebebe, -10px -10px 20px #ffffff;
+    transition: transform 0.4s;
+    margin-bottom: 30px;
+}
+
+.card-3d:hover {
+    transform: translateY(-10px) rotateX(5deg);
+    box-shadow: 0 15px 30px rgba(0,35,102,0.15);
+}
+
+h1, h2 {
+    color: #002366;
+    text-transform: uppercase;
+}
+
+.btn {
+    background: #002366;
+    color: white;
+    padding: 12px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    display: inline-block;
+    margin-top: 20px;
+    transition: 0.3s;
+    box-shadow: 0 4px 15px rgba(0,35,102,0.3);
+}
+
+.btn:hover {
+    transform: scale(1.1);
+    background: #003399;
+}
+
+footer {
+    background: #001a4d;
+    color: white;
+    text-align: center;
+    padding: 30px 0;
+    margin-top: 50px;
+}
+
+.logo-img {
+    width: 120px;
+    border-radius: 50%;
+    border: 3px solid #002366;
+    background: white;
+}
