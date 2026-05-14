@@ -3,176 +3,317 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jai Ganesh Enterprises - Katraj</title>
+    <title>Jai Ganesh Enterprises | Global Market</title>
     <style>
-        /* 3D & Theme Settings */
+        /* Modern 3D.ai Style Color Palette & Animations */
         :root {
-            --navy: #002366;
-            --white: #ffffff;
-            --gold: #d4af37;
-            --shadow: 10px 10px 20px #bebebe, -10px -10px 20px #ffffff;
-            --heavy-3d: 0 20px 50px rgba(0,35,102,0.3);
+            --bg-dark: #050b14;
+            --card-bg: rgba(16, 25, 43, 0.6);
+            --glow-blue: #00f3ff;
+            --glow-gold: #d4af37;
+            --text-main: #e2e8f0;
+            --text-muted: #94a3b8;
         }
 
-        html { scroll-behavior: smooth; } /* Smooth Scrolling */
+        html { 
+            scroll-behavior: smooth; 
+        }
 
         body {
             margin: 0;
-            font-family: 'Segoe UI', Arial, sans-serif;
-            background-color: #f0f2f5;
-            color: var(--navy);
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background: radial-gradient(circle at top, #0b192c 0%, var(--bg-dark) 100%);
+            color: var(--text-main);
             overflow-x: hidden;
+            line-height: 1.8;
         }
 
-        /* Navigation - Simple Top Bar */
+        /* Floating Animation */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+
+        /* Glassmorphism Header */
         header {
-            background: var(--navy);
-            color: white;
+            background: rgba(5, 11, 20, 0.8);
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid rgba(0, 243, 255, 0.2);
             padding: 15px 0;
             position: sticky;
             top: 0;
             z-index: 1000;
             text-align: center;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
 
-        header h1 { margin: 0; font-size: 22px; letter-spacing: 2px; }
+        header h1 { 
+            margin: 10px 0 5px; 
+            font-size: 26px; 
+            letter-spacing: 3px; 
+            background: linear-gradient(90deg, var(--glow-gold), #fff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 800;
+        }
 
-        nav { margin-top: 10px; }
+        nav { margin-top: 15px; padding-bottom: 10px; }
         nav a {
-            color: white;
+            color: var(--text-main);
             text-decoration: none;
-            margin: 0 10px;
-            font-size: 13px;
-            font-weight: bold;
+            margin: 0 15px;
+            font-size: 14px;
+            font-weight: 600;
             text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: 0.3s;
+            position: relative;
         }
 
-        /* Section Styling */
+        nav a:hover { color: var(--glow-blue); text-shadow: 0 0 10px var(--glow-blue); }
+
+        /* General Section Styling */
         section {
-            padding: 80px 20px;
-            max-width: 1000px;
+            padding: 100px 20px;
+            max-width: 1100px;
             margin: auto;
-            min-height: 50vh;
+            position: relative;
         }
 
-        /* 3D Box Effect */
+        /* 3D Glassmorphism Cards */
         .card-3d {
-            background: var(--white);
-            padding: 40px;
-            border-radius: 30px;
-            box-shadow: var(--shadow);
-            transition: all 0.5s ease;
-            transform: perspective(1000px) rotateX(5deg); /* Default 3D tilt */
-            text-align: center;
-            margin-bottom: 50px;
+            background: var(--card-bg);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 50px;
+            margin-bottom: 60px;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.5), inset 0 0 0 1px rgba(255,255,255,0.1);
+            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+            transform: perspective(1200px) rotateX(2deg) rotateY(-2deg);
+            transform-style: preserve-3d;
         }
 
         .card-3d:hover {
-            transform: perspective(1000px) rotateX(0deg) translateY(-15px);
-            box-shadow: var(--heavy-3d);
+            transform: perspective(1200px) rotateX(0deg) rotateY(0deg) translateY(-10px) scale(1.02);
+            box-shadow: 0 30px 60px rgba(0, 243, 255, 0.15), inset 0 0 20px rgba(212, 175, 55, 0.05);
+            border: 1px solid rgba(0, 243, 255, 0.3);
         }
 
+        .hero-section { text-align: center; }
+        
         .hero-box {
-            background: var(--navy);
-            color: white;
-            border-radius: 30px;
-            padding: 60px 20px;
-            box-shadow: var(--heavy-3d);
-            transform: perspective(1000px) rotateY(-5deg);
+            animation: float 6s ease-in-out infinite;
+            background: linear-gradient(135deg, rgba(16, 25, 43, 0.8) 0%, rgba(0, 35, 102, 0.4) 100%);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            box-shadow: 0 0 40px rgba(212, 175, 55, 0.1);
         }
 
-        h2 { font-size: 2.5em; color: var(--navy); margin-bottom: 20px; }
-        .hero-box h2 { color: var(--white); }
+        h2 { 
+            font-size: 2.8em; 
+            margin-bottom: 20px; 
+            color: #ffffff;
+            font-weight: 800;
+        }
 
+        h3 {
+            font-size: 1.8em;
+            color: var(--glow-gold);
+            margin-bottom: 15px;
+        }
+
+        p { 
+            font-size: 1.1em; 
+            color: var(--text-muted); 
+            margin-bottom: 20px;
+        }
+
+        /* 3D Button */
         .btn {
-            background: var(--gold);
-            color: var(--navy);
-            padding: 15px 40px;
-            border-radius: 50px;
+            background: linear-gradient(45deg, var(--glow-gold), #ffdf00);
+            color: #000;
+            padding: 16px 45px;
+            border-radius: 30px;
             text-decoration: none;
-            font-weight: bold;
+            font-weight: 900;
+            font-size: 1.1em;
+            letter-spacing: 1px;
             display: inline-block;
-            margin-top: 20px;
-            box-shadow: 0 10px 20px rgba(212, 175, 55, 0.4);
-            transition: 0.3s;
+            margin-top: 30px;
+            box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3), inset 0 -3px 0 rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+            transform: translateZ(20px); /* 3D pop effect inside card */
         }
 
-        .btn:hover { transform: scale(1.1); box-shadow: 0 15px 30px rgba(212, 175, 55, 0.6); }
+        .btn:hover { 
+            transform: translateY(-5px) translateZ(30px); 
+            box-shadow: 0 15px 30px rgba(212, 175, 55, 0.6), inset 0 -3px 0 rgba(0,0,0,0.2); 
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--glow-blue);
+            border: 2px solid var(--glow-blue);
+            box-shadow: 0 0 15px rgba(0, 243, 255, 0.2);
+        }
+
+        .btn-outline:hover {
+            background: var(--glow-blue);
+            color: #000;
+            box-shadow: 0 0 30px rgba(0, 243, 255, 0.6);
+        }
+
+        /* Two Column Layout for details */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 40px;
+            text-align: left;
+        }
+
+        .feature-box {
+            background: rgba(0,0,0,0.3);
+            padding: 25px;
+            border-radius: 15px;
+            border-left: 3px solid var(--glow-blue);
+        }
 
         footer {
-            background: var(--navy);
-            color: white;
+            background: #02050a;
+            color: var(--text-muted);
             text-align: center;
             padding: 50px 20px;
-            margin-top: 50px;
+            border-top: 1px solid rgba(255,255,255,0.05);
         }
 
-        .logo-img { width: 100px; border-radius: 50%; background: white; padding: 5px; margin-bottom: 10px; }
-        
-        /* Mobile Responsive */
-        @media (max-width: 600px) {
-            h2 { font-size: 1.8em; }
-            .card-3d { padding: 20px; }
-            nav a { font-size: 10px; margin: 0 5px; }
+        .logo-img { 
+            width: 110px; 
+            border-radius: 50%; 
+            background: #fff; 
+            padding: 5px; 
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
+            transition: 0.5s;
+        }
+
+        .logo-img:hover { transform: rotate(360deg); }
+
+        /* Mobile Adjustments */
+        @media (max-width: 768px) {
+            h2 { font-size: 2em; }
+            .grid-2 { grid-template-columns: 1fr; }
+            .card-3d { padding: 30px 20px; }
+            nav a { font-size: 11px; margin: 0 6px; }
         }
     </style>
 </head>
 <body>
 
     <header>
-        <img src="image.png" alt="Logo" class="logo-img"><br>
-        <h1>JAI GANESH ENTERPRISES</h1>
+        <img src="image.png" alt="Jai Ganesh Logo" class="logo-img">
+        <h1>JAI GANESH</h1>
         <nav>
             <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#market">Market</a>
-            <a href="#legal">Legal</a>
-            <a href="#contact">Contact</a>
+            <a href="#about">Legacy</a>
+            <a href="#market">Global Platform</a>
+            <a href="#legal">Corporate Trust</a>
+            <a href="#contact">Katraj Office</a>
         </nav>
     </header>
 
-    <section id="home">
+    <!-- HOME SECTION -->
+    <section id="home" class="hero-section">
         <div class="card-3d hero-box">
-            <h2>EARN DOLLARS WITH TRUST</h2>
-            <p>You are at the right place for global financial growth. Join the elite market today.</p>
-            <a href="#contact" class="btn">START NOW</a>
+            <h2>EARN DOLLARS WITH ABSOLUTE TRUST</h2>
+            <p style="font-size: 1.3em; color: #fff;">You are at the right place for unprecedented global financial growth. Join a structured, highly liquid, and secure corporate platform designed for modern wealth generation.</p>
+            <a href="#contact" class="btn">JOIN THE GLOBAL MARKET</a>
+            <a href="#about" class="btn btn-outline" style="margin-left: 15px;">EXPLORE LEGACY</a>
         </div>
     </section>
 
+    <!-- ABOUT SECTION -->
     <section id="about">
         <div class="card-3d">
-            <h2>Our 150-Year Legacy</h2>
-            <p>Building Growth Since 1875. Jai Ganesh is a Trusted Business Platform providing a Legal & Corporate framework for global participants.</p>
+            <h2>A 150-Year Legacy of Excellence</h2>
+            <p>Since 1875, Jai Ganesh Enterprises has been at the forefront of building robust business growth. What started as a traditional trust has evolved into a powerhouse of corporate strategy and wealth management.</p>
+            <div class="grid-2">
+                <div class="feature-box">
+                    <h3 style="font-size: 1.4em; color: var(--glow-blue);">Time-Tested Foundation</h3>
+                    <p>Surviving and thriving through decades of market shifts, our core principles of transparency, partner growth, and security remain unchanged.</p>
+                </div>
+                <div class="feature-box">
+                    <h3 style="font-size: 1.4em; color: var(--glow-blue);">Modern Financial Architecture</h3>
+                    <p>We combine our 150-year-old traditional values with cutting-edge, fast-server networks to execute seamless global market operations.</p>
+                </div>
+            </div>
         </div>
     </section>
 
+    <!-- MARKET SECTION -->
     <section id="market">
-        <div class="card-3d" style="background: #f9f9f9;">
-            <h2>Global Market</h2>
-            <p>International opportunities at your fingertips. We connect you to a market that has been thriving for over a century with absolute transparency.</p>
+        <div class="card-3d" style="border-left: 2px solid var(--glow-gold); border-right: 2px solid var(--glow-gold);">
+            <h2>The Global Market Advantage</h2>
+            <p>Our platform breaks geographical boundaries, allowing you to scale your business and earn in international standards (USD). We provide the infrastructure needed for high-frequency, multi-tier growth.</p>
+            <div class="grid-2">
+                <div>
+                    <h3 style="font-size: 1.5em;">Why Choose Our Platform?</h3>
+                    <ul style="color: var(--text-muted); line-height: 2;">
+                        <li><b>Unmatched Liquidity:</b> Access to deep global financial pools.</li>
+                        <li><b>Advanced Technology:</b> Fast, decentralized-style execution with zero downtime.</li>
+                        <li><b>Scalable Networks:</b> Designed to support multiple business nodes and extensive network expansion seamlessly.</li>
+                        <li><b>Real-Time Analytics:</b> Transparent tracking of your global portfolio and asset growth.</li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="feature-box" style="background: rgba(212, 175, 55, 0.05); border-left: 3px solid var(--glow-gold); height: 100%;">
+                        <h3 style="font-size: 1.4em; color: var(--glow-gold);">Maximize Your Returns</h3>
+                        <p>If your goal is to generate serious wealth and earn dollars dynamically, our systematic corporate framework provides the exact leverage you need to succeed in today's competitive ecosystem.</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
+    <!-- LEGAL SECTION -->
     <section id="legal">
         <div class="card-3d">
-            <h2>Legal & Corporate</h2>
-            <p>Your security is our priority. Our platform is fully compliant with legal standards, ensuring a safe environment for your financial journey.</p>
+            <h2>Legal & Corporate Compliance</h2>
+            <p>Security and Trust are the pillars of Jai Ganesh Enterprises. We operate strictly within established legal frameworks to ensure our partners' capital and data are universally protected.</p>
+            <div class="grid-2">
+                <div class="feature-box">
+                    <h3 style="font-size: 1.4em; color: var(--glow-blue);">Certified Operations</h3>
+                    <p>Fully compliant with corporate regulations, ensuring every transaction, agreement, and payout is legally binding and 100% transparent.</p>
+                </div>
+                <div class="feature-box">
+                    <h3 style="font-size: 1.4em; color: var(--glow-blue);">Data Security Protocols</h3>
+                    <p>Utilizing high-end encryption to protect user data, financial records, and network structures from unauthorized access.</p>
+                </div>
+            </div>
         </div>
     </section>
 
+    <!-- CONTACT SECTION -->
     <section id="contact">
-        <div class="card-3d" style="border: 2px solid var(--navy);">
-            <h2>Contact Us</h2>
-            <p><b>Location:</b> Katraj, Pune, Maharashtra</p>
-            <p>Professional Support is available 24/7 for our corporate partners.</p>
-            <a href="mailto:contact@jaiganesh.com" class="btn">Send Email</a>
+        <div class="card-3d" style="text-align: center; background: linear-gradient(to top, rgba(0, 243, 255, 0.05), var(--card-bg));">
+            <h2>Connect With Our Corporate Hub</h2>
+            <p style="font-size: 1.2em;">Ready to scale your business globally? Visit our headquarters or connect digitally.</p>
+            
+            <div style="background: rgba(0,0,0,0.4); padding: 30px; border-radius: 15px; display: inline-block; margin-top: 20px; text-align: left; border: 1px solid rgba(255,255,255,0.1);">
+                <p><b>🏢 Corporate Office:</b> Katraj, Pune, Maharashtra</p>
+                <p><b>🌍 Operating Status:</b> 24/7 Global Network Live</p>
+                <p><b>🤝 Consulting:</b> Available for Network Planners & Investors</p>
+            </div>
+            <br>
+            <a href="#" class="btn" style="margin-top: 40px;">SCHEDULE A MEETING IN PUNE</a>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2026 Jai Ganesh Enterprises | Professional & Legal Platform</p>
-        <p><b>Katraj, Pune</b></p>
+        <h2 style="font-size: 1.5em; margin-bottom: 10px; color: var(--text-main);">JAI GANESH ENTERPRISES</h2>
+        <p>A Trusted Legal & Corporate Platform Since 1875.</p>
+        <p style="color: var(--glow-blue); font-weight: bold; margin-top: 20px;">HEADQUARTERS: KATRAJ, PUNE</p>
+        <p style="font-size: 0.9em; margin-top: 30px; opacity: 0.5;">&copy; 2026 All Rights Reserved.</p>
     </footer>
 
 </body>
